@@ -3,6 +3,7 @@ const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
 const app = express();
 app.use(cors());
+const port= process.env.PORT || 8000;
 
 app.get('/',async(req,res)=>{
     const url = 'mongodb+srv://singhitisha19july:Itisha19@cluster0.k6acre0.mongodb.net/';
@@ -25,6 +26,6 @@ app.get('/',async(req,res)=>{
         console.log('Error in closing connection');
     })
 });
-app.listen(8000,(e)=>{
-    console.log("Server connected at 8000");
+app.listen(port,(e)=>{
+    console.log("Server connected at"+port);
 })
